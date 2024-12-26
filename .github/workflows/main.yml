@@ -51,6 +51,9 @@ jobs:
           cd /var/www/html/dhumakot
           composer update
           sudo chmod -R 777 storage/ bootstrap/ database/
+          sudo touch database/database.sqlite
+          sudo chmod 644 storage/logs/laravel.log
+          sudo chmod -R 777 storage/ bootstrap/ database/
           sudo mv .env.example .env
           php artisan key:generate
           php artisan migrate:refresh
