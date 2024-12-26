@@ -48,5 +48,8 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd /var/www/html/dhumakot
-          php artisan migrate --force
+          chmod -R 777 storage/ bootstrap/ database/
+          mv .env.example .env
+          php artisan key:generate
+          php artisan migrate:refresh
           php artisan optimize
