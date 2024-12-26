@@ -49,6 +49,7 @@ jobs:
         script: |
           cd /var/www/html/dhumakot
           composer update
+          sudo chown -R www-data:www-data /var/www/html/
           sudo chmod -R 777 storage/ bootstrap/ database/
           mv .env.example .env
           php artisan key:generate
