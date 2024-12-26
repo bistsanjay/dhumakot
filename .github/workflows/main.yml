@@ -39,6 +39,7 @@ jobs:
         REMOTE_HOST: ${{ secrets.VPS_HOST }}
         REMOTE_USER: ${{ secrets.VPS_USER }}
         TARGET: "/var/www/html/dhumakot"
+        VERBOSE: true
 
     - name: Run Remote/Artisan Commands
       uses: appleboy/ssh-action@v0.1.6
