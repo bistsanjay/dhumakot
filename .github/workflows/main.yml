@@ -51,7 +51,7 @@ jobs:
           composer update
           sudo chown -R www-data:www-data /var/www/html/
           sudo chmod -R 777 storage/ bootstrap/ database/
-          mv .env.example .env
+          sudo mv .env.example .env
           php artisan key:generate
           php artisan migrate:refresh
           php artisan optimize
